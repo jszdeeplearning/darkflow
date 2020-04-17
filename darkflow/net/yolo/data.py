@@ -7,6 +7,8 @@ import pickle
 import numpy as np
 import os 
 
+from sys import exit
+
 def parse(self, exclusive = False):
     meta = self.meta
     ext = '.parsed'
