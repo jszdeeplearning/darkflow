@@ -1,4 +1,5 @@
-from ...utils.pascal_voc_clean_xml import pascal_voc_clean_xml
+# from ...utils.pascal_voc_clean_xml import pascal_voc_clean_xml
+from ...utils.pascal_voc_clean_xml import parse_mscoco_annot
 from numpy.random import permutation as perm
 from .predict import preprocess
 # from .misc import show
@@ -13,11 +14,12 @@ def parse(self, exclusive = False):
     meta = self.meta
     ext = '.parsed'
     ann = self.FLAGS.annotation
-    if not os.path.isdir(ann):
-        msg = 'Annotation directory not found {} .'
-        exit('Error: {}'.format(msg.format(ann)))
+    # if not os.path.isdir(ann):
+    #     msg = 'Annotation directory not found {} .'
+    #     exit('Error: {}'.format(msg.format(ann)))
     print('\n{} parsing {}'.format(meta['model'], ann))
-    dumps = pascal_voc_clean_xml(ann, meta['labels'], exclusive)
+    # dumps = pascal_voc_clean_xml(ann, meta['labels'], exclusive)
+    dumps = parse_mscoco_annot(ann, meta['labels'], exclusive)
     return dumps
 
 
