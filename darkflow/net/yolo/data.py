@@ -1,5 +1,5 @@
 # from ...utils.pascal_voc_clean_xml import pascal_voc_clean_xml
-from ...utils.pascal_voc_clean_xml import parse_mscoco_annot
+from ...utils.parse_mscoco_annot import parse_mscoco_annot
 from numpy.random import permutation as perm
 from .predict import preprocess
 # from .misc import show
